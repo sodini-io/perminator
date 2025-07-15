@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     // Original Chmod Permissions
+    @StateObject var metadata = Metadata(octal: 0)
     @State private var chmodValue: String = ""
     
     // Original Owner Permissions
@@ -29,25 +30,44 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
+                GroupBox(label: Text("Special")) {
+                    VStack(alignment: .leading) {
+                        Toggle("setuid", isOn: $metadata.special.setUid)
+                            .onChange(of: metadata.special.setUid) { _, _ in calculate() }
+                        Toggle("setgid", isOn: $metadata.special.setGid)
+                            .onChange(of: metadata.special.setGid) { _, _ in calculate() }
+                        Toggle("Sticky", isOn: $metadata.special.stickyBit)
+                            .onChange(of: metadata.special.stickyBit) { _, _ in calculate() }
+                    }.padding()
+                }
                 GroupBox(label: Text("Owner")) {
                     VStack(alignment: .leading) {
-                        Toggle("Read", isOn: $ownerRead)
-                        Toggle("Write", isOn: $ownerWrite)
-                        Toggle("Execute", isOn: $ownerExecute)
+                        Toggle("Read", isOn: $metadata.owner.read)
+                            .onChange(of: metadata.owner.read) { _, _ in calculate() }
+                        Toggle("Write", isOn: $metadata.owner.write)
+                            .onChange(of: metadata.owner.write) { _, _ in calculate() }
+                        Toggle("Execute", isOn: $metadata.owner.execute)
+                            .onChange(of: metadata.owner.execute) { _, _ in calculate() }
                     }.padding()
                 }
                 GroupBox(label: Text("Group")) {
                     VStack(alignment: .leading) {
-                        Toggle("Read", isOn: $groupRead)
-                        Toggle("Write", isOn: $groupWrite)
-                        Toggle("Execute", isOn: $groupExecute)
+                        Toggle("Read", isOn: $metadata.group.read)
+                            .onChange(of: metadata.group.read) { _, _ in calculate() }
+                        Toggle("Write", isOn: $metadata.group.write)
+                            .onChange(of: metadata.group.write) { _, _ in calculate() }
+                        Toggle("Execute", isOn: $metadata.group.execute)
+                            .onChange(of: metadata.group.execute) { _, _ in calculate() }
                     }.padding()
                 }
                 GroupBox(label: Text("Others")) {
                     VStack(alignment: .leading) {
-                        Toggle("Read", isOn: $othersRead)
-                        Toggle("Write", isOn: $othersWrite)
-                        Toggle("Execute", isOn: $othersExecute)
+                        Toggle("Read", isOn: $metadata.others.read)
+                            .onChange(of: metadata.others.read) { _, _ in calculate() }
+                        Toggle("Write", isOn: $metadata.others.write)
+                            .onChange(of: metadata.others.write) { _, _ in calculate() }
+                        Toggle("Execute", isOn: $metadata.others.execute)
+                            .onChange(of: metadata.others.execute) { _, _ in calculate() }
                     }.padding()
                 }
             }
@@ -55,16 +75,16 @@ struct ContentView: View {
                 Button("Copy") {
                     // Copy to clipboard here.
                 }
-                Spacer().frame(width: 250)
+                Spacer().frame(width: 350)
                 TextField("0000", text: $chmodValue).frame(width: 50)
-            }
+            }.padding(.horizontal, 20)
         }
-        .padding()
     }
     
-    func calculateOctet(read: Bool, write: Bool, execute: Bool) -> Int {
-        (read ? 4 : 0) + (write ? 2 : 0) + (execute ? 1 : 0)
+    func calculate() -> Void {
+        chmodValue = String(format: "%04d", metadata.octal)
     }
+    
 }
 
 #Preview {

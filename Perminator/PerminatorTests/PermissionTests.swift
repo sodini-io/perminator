@@ -221,7 +221,7 @@ struct SpecialInitFromPermsTests {
 //
 
 
-struct MetadataInitFromOctalTests {
+struct MetadataTests {
  
     @Test func initFromOctalZero() throws {
         let metadata = Metadata(octal: 0)
@@ -232,7 +232,16 @@ struct MetadataInitFromOctalTests {
         #expect(metadata.others.octal == 0)
     }
 
-    @Test func initFromOctal() throws {
+    @Test func initFromOctalWithoutSticky() throws {
+        let metadata = Metadata(octal: 754)
+        #expect(metadata.octal == 754)
+        #expect(metadata.special.octal == 0)
+        #expect(metadata.owner.octal == 7)
+        #expect(metadata.group.octal == 5)
+        #expect(metadata.others.octal == 4)
+    }
+    
+    @Test func initFromOctalWithSticky() throws {
         let metadata = Metadata(octal: 1754)
         #expect(metadata.octal == 1754)
         #expect(metadata.special.octal == 1)
@@ -241,4 +250,10 @@ struct MetadataInitFromOctalTests {
         #expect(metadata.others.octal == 4)
     }
     
+    @Test func initFromOctalWithStickyAndUpdate() throws {
+        let metadata = Metadata(octal: 1234)
+        #expect(metadata.octal == 1234)
+        metadata.update(octal: 4321)
+        #expect(metadata.octal == 4321)
+    }
 }
