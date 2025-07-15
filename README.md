@@ -1,2 +1,4 @@
-# perminator
-Generate and decode permission codes in octal and symbolic formats.
+# Perminator
+
+A friendly macOS app that makes calculaing `chmod` permissions quick and easy.
+
