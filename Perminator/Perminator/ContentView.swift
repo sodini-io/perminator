@@ -77,7 +77,16 @@ struct ContentView: View {
                     NSPasteboard.general.setString(chmodValue, forType: .string)
                 }
                 Spacer().frame(width: 350)
-                TextField("0000", text: $chmodValue).frame(width: 50).multilineTextAlignment(.trailing)
+                TextField("0000", text: $chmodValue)
+                    .frame(width: 50)
+                    .multilineTextAlignment(.trailing)
+                    .onSubmit {
+                        if let octalInt = Int(chmodValue) {
+                            metadata.update(octal: octalInt)
+                        } else {
+                            print("Bad chmod value")
+                        }
+                    }
             }.padding(.horizontal, 20)
         }
     }
