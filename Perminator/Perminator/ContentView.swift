@@ -73,10 +73,11 @@ struct ContentView: View {
             }
             HStack {
                 Button("Copy") {
-                    // Copy to clipboard here.
+                    NSPasteboard.general.clearContents()
+                    NSPasteboard.general.setString(chmodValue, forType: .string)
                 }
                 Spacer().frame(width: 350)
-                TextField("0000", text: $chmodValue).frame(width: 50)
+                TextField("0000", text: $chmodValue).frame(width: 50).multilineTextAlignment(.trailing)
             }.padding(.horizontal, 20)
         }
     }
