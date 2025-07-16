@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var chmodValue: String = ""
 
     var body: some View {
+        Spacer()
         VStack {
             HStack {
                 GroupBox(label: Text(LocalizedStringKey("section.special"))) {
@@ -27,7 +28,7 @@ struct ContentView: View {
                             .help(LocalizedStringKey("help.stickybit"))
                             .onChange(of: metadata.special.stickyBit) { _, _ in calculate() }
                     }.padding()
-                }
+                }.padding(.trailing)
                 GroupBox(label: Text(LocalizedStringKey("section.owner"))) {
                     VStack(alignment: .leading) {
                         Toggle(LocalizedStringKey("permission.read"), isOn: $metadata.owner.read)
@@ -37,7 +38,7 @@ struct ContentView: View {
                         Toggle(LocalizedStringKey("permission.execute"), isOn: $metadata.owner.execute)
                             .onChange(of: metadata.owner.execute) { _, _ in calculate() }
                     }.padding()
-                }
+                }.padding(.trailing)
                 GroupBox(label: Text(LocalizedStringKey("section.group"))) {
                     VStack(alignment: .leading) {
                         Toggle(LocalizedStringKey("permission.read"), isOn: $metadata.group.read)
@@ -47,7 +48,7 @@ struct ContentView: View {
                         Toggle(LocalizedStringKey("permission.execute"), isOn: $metadata.group.execute)
                             .onChange(of: metadata.group.execute) { _, _ in calculate() }
                     }.padding()
-                }
+                }.padding(.trailing)
                 GroupBox(label: Text(LocalizedStringKey("section.others"))) {
                     VStack(alignment: .leading) {
                         Toggle(LocalizedStringKey("permission.read"), isOn: $metadata.others.read)
@@ -57,14 +58,15 @@ struct ContentView: View {
                         Toggle(LocalizedStringKey("permission.execute"), isOn: $metadata.others.execute)
                             .onChange(of: metadata.others.execute) { _, _ in calculate() }
                     }.padding()
-                }
+                }.padding(.trailing)
             }
             HStack {
                 Button(LocalizedStringKey("button.copy")) {
                     NSPasteboard.general.clearContents()
                     NSPasteboard.general.setString(chmodValue, forType: .string)
                 }
-                Spacer().frame(width: 350)
+                Spacer()
+                Spacer()
                 TextField("0000", text: $chmodValue)
                     .frame(width: 50)
                     .multilineTextAlignment(.trailing)
@@ -75,7 +77,8 @@ struct ContentView: View {
                             print("Bad chmod value")
                         }
                     }
-            }.padding(.horizontal, 20)
+                    .padding(.trailing)
+            }.padding()
         }
     }
     

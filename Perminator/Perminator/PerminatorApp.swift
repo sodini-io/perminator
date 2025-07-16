@@ -13,5 +13,6 @@ struct PerminatorApp: App {
         WindowGroup {
             ContentView()
         }
+        .windowResizability(.contentSize)
     }
 }
