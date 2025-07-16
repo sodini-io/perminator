@@ -1,0 +1,8 @@
+/* Help text for setuid bit */
+"help.setuid" = "Exécute le programme avec les privilèges du propriétaire du fichier au lieu de ceux de l’utilisateur.";
+
+/* Help text for setgid bit */
+"help.setgid" = "Exécute avec les privilèges du groupe du fichier. Sur un répertoire, les nouveaux fichiers héritent du groupe du répertoire.";
+
+/* Help text for sticky bit */
+"help.stickybit" = "Lorsqu’il est défini sur un répertoire, seuls le propriétaire du fichier (ou root) peuvent supprimer ou renommer les fichiers, même si d'autres ont un accès en écriture. Ignoré sur les fichiers.";

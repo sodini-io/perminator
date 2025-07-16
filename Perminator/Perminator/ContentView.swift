@@ -11,68 +11,56 @@ struct ContentView: View {
     // Original Chmod Permissions
     @StateObject var metadata = Metadata(octal: 0)
     @State private var chmodValue: String = ""
-    
-    // Original Owner Permissions
-    @State private var ownerRead = false
-    @State private var ownerWrite = false
-    @State private var ownerExecute = false
-
-    // Original Group Permissions
-    @State private var groupRead = false
-    @State private var groupWrite = false
-    @State private var groupExecute = false
-
-    // Original Others Permissions
-    @State private var othersRead = false
-    @State private var othersWrite = false
-    @State private var othersExecute = false
 
     var body: some View {
         VStack {
             HStack {
-                GroupBox(label: Text("Special")) {
+                GroupBox(label: Text(LocalizedStringKey("section.special"))) {
                     VStack(alignment: .leading) {
-                        Toggle("setuid", isOn: $metadata.special.setUid)
+                        Toggle(LocalizedStringKey("toggle.setuid"), isOn: $metadata.special.setUid)
+                            .help(LocalizedStringKey("help.setuid"))
                             .onChange(of: metadata.special.setUid) { _, _ in calculate() }
-                        Toggle("setgid", isOn: $metadata.special.setGid)
+                        Toggle(LocalizedStringKey("toggle.setgid"), isOn: $metadata.special.setGid)
+                            .help(LocalizedStringKey("help.setgid"))
                             .onChange(of: metadata.special.setGid) { _, _ in calculate() }
-                        Toggle("Sticky", isOn: $metadata.special.stickyBit)
+                        Toggle(LocalizedStringKey("toggle.sticky"), isOn: $metadata.special.stickyBit)
+                            .help(LocalizedStringKey("help.stickybit"))
                             .onChange(of: metadata.special.stickyBit) { _, _ in calculate() }
                     }.padding()
                 }
-                GroupBox(label: Text("Owner")) {
+                GroupBox(label: Text(LocalizedStringKey("section.owner"))) {
                     VStack(alignment: .leading) {
-                        Toggle("Read", isOn: $metadata.owner.read)
+                        Toggle(LocalizedStringKey("permission.read"), isOn: $metadata.owner.read)
                             .onChange(of: metadata.owner.read) { _, _ in calculate() }
-                        Toggle("Write", isOn: $metadata.owner.write)
+                        Toggle(LocalizedStringKey("permission.write"), isOn: $metadata.owner.write)
                             .onChange(of: metadata.owner.write) { _, _ in calculate() }
-                        Toggle("Execute", isOn: $metadata.owner.execute)
+                        Toggle(LocalizedStringKey("permission.execute"), isOn: $metadata.owner.execute)
                             .onChange(of: metadata.owner.execute) { _, _ in calculate() }
                     }.padding()
                 }
-                GroupBox(label: Text("Group")) {
+                GroupBox(label: Text(LocalizedStringKey("section.group"))) {
                     VStack(alignment: .leading) {
-                        Toggle("Read", isOn: $metadata.group.read)
+                        Toggle(LocalizedStringKey("permission.read"), isOn: $metadata.group.read)
                             .onChange(of: metadata.group.read) { _, _ in calculate() }
-                        Toggle("Write", isOn: $metadata.group.write)
+                        Toggle(LocalizedStringKey("permission.write"), isOn: $metadata.group.write)
                             .onChange(of: metadata.group.write) { _, _ in calculate() }
-                        Toggle("Execute", isOn: $metadata.group.execute)
+                        Toggle(LocalizedStringKey("permission.execute"), isOn: $metadata.group.execute)
                             .onChange(of: metadata.group.execute) { _, _ in calculate() }
                     }.padding()
                 }
-                GroupBox(label: Text("Others")) {
+                GroupBox(label: Text(LocalizedStringKey("section.others"))) {
                     VStack(alignment: .leading) {
-                        Toggle("Read", isOn: $metadata.others.read)
+                        Toggle(LocalizedStringKey("permission.read"), isOn: $metadata.others.read)
                             .onChange(of: metadata.others.read) { _, _ in calculate() }
-                        Toggle("Write", isOn: $metadata.others.write)
+                        Toggle(LocalizedStringKey("permission.write"), isOn: $metadata.others.write)
                             .onChange(of: metadata.others.write) { _, _ in calculate() }
-                        Toggle("Execute", isOn: $metadata.others.execute)
+                        Toggle(LocalizedStringKey("permission.execute"), isOn: $metadata.others.execute)
                             .onChange(of: metadata.others.execute) { _, _ in calculate() }
                     }.padding()
                 }
             }
             HStack {
-                Button("Copy") {
+                Button(LocalizedStringKey("button.copy")) {
                     NSPasteboard.general.clearContents()
                     NSPasteboard.general.setString(chmodValue, forType: .string)
                 }
