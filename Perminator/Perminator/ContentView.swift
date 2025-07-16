@@ -78,12 +78,49 @@ struct ContentView: View {
                         }
                     }
                     .padding(.trailing)
-            }.padding()
+            }
+            .padding()
+        }
+        .onDrop(of: [.fileURL], isTargeted: nil) { providers in
+            handleFileDrop(providers: providers)
+            return true
         }
     }
     
     func calculate() -> Void {
         chmodValue = String(format: "%04d", metadata.octal)
+    }
+
+    func handleFileDrop(providers: [NSItemProvider]) {
+        for provider in providers {
+            if provider.hasItemConformingToTypeIdentifier("public.file-url") {
+                provider.loadItem(forTypeIdentifier: "public.file-url", options: nil) { (item, error) in
+                    DispatchQueue.main.async {
+                        if let data = item as? Data,
+                           let url = URL(dataRepresentation: data, relativeTo: nil) {
+                            updatePermissions(for: url)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func updatePermissions(for url: URL) {
+        do {
+            let attributes = try FileManager.default.attributesOfItem(atPath: url.path)
+            if let posixPermissions = attributes[.posixPermissions] as? NSNumber {
+                let perms = posixPermissions.intValue
+                    chmodValue = String(format: "%04o", perms)
+                    if let octalInt = Int(chmodValue) {
+                        metadata.update(octal: octalInt)
+                    } else {
+                        print("Bad chmod value")
+                    }
+            }
+        } catch {
+            print("Failed to read file attributes: \(error)")
+        }
     }
     
 }
