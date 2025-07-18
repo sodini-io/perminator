@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>Perminator</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Created by Sodini Systems, LLC</string>
+	<key>NSApplicationSupportURL</key>
+	<string>https://sodini.io</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>NSAboutPanelOptions</key>
+	<string>A smarter way to chmod</string>
+</dict>
+</plist>

@@ -20,4 +20,4 @@
 "help.stickybit" = "When set on a directory, only the file's owner (or root) can delete or rename files, even if others have write access. Ignored on files.";
 
 /* Button Copy */
-"button.copy" = "Copy";
+"button.copy" = "Copy to Clipboard";
