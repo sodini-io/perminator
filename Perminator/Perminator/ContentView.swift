@@ -11,6 +11,7 @@ struct ContentView: View {
     // Original Chmod Permissions
     @StateObject var metadata = Metadata(octal: 0)
     @State private var chmodValue: String = ""
+    @State private var symbolicValue: String = ""
 
     var body: some View {
         Spacer()
@@ -59,14 +60,22 @@ struct ContentView: View {
                             .onChange(of: metadata.others.execute) { _, _ in calculate() }
                     }.padding()
                 }.padding(.trailing)
+            }.padding(.trailing)
+            VStack {
+                Spacer()
             }
             HStack {
+                Spacer()
+                Text(metadata.symbolic)
+                    .font(.system(.title2, design: .monospaced))
+                Spacer()
+            }
+            HStack {
+                Spacer()
                 Button(LocalizedStringKey("button.copy")) {
                     NSPasteboard.general.clearContents()
                     NSPasteboard.general.setString(chmodValue, forType: .string)
                 }
-                Spacer()
-                Spacer()
                 TextField("0000", text: $chmodValue)
                     .frame(width: 50)
                     .multilineTextAlignment(.trailing)

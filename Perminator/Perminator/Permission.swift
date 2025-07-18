@@ -76,6 +76,33 @@ class Metadata: OctalRepresentable, ObservableObject {
         others.octal
     }
 
+    var symbolic: String {
+        var perms = ""
+
+        // USER
+        perms += owner.read ? "r" : "-"
+        perms += owner.write ? "w" : "-"
+        perms += special.setUid
+            ? (owner.execute ? "s" : "S")
+            : (owner.execute ? "x" : "-")
+
+        // GROUP
+        perms += group.read ? "r" : "-"
+        perms += group.write ? "w" : "-"
+        perms += special.setGid
+            ? (group.execute ? "s" : "S")
+            : (group.execute ? "x" : "-")
+
+        // OTHERS
+        perms += others.read ? "r" : "-"
+        perms += others.write ? "w" : "-"
+        perms += special.stickyBit
+            ? (others.execute ? "t" : "T")
+            : (others.execute ? "x" : "-")
+
+        return perms
+    }
+
     private static func parse(_ octal: Int) -> (Special, Permission, Permission, Permission) {
         let special = Special(octal: (octal / 1000) % 10)
         let owner = Permission(octal: (octal / 100) % 10)
