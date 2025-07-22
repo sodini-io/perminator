@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		384A1CF82E3010C800FEB164 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 384A1CF72E3010C800FEB164 /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		389FD6492E26B50800962D46 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		384A1CF72E3010C800FEB164 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		389FD63A2E26B50700962D46 /* Perminator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perminator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		389FD6482E26B50800962D46 /* PerminatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerminatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		389FD6522E26B50800962D46 /* PerminatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerminatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +80,7 @@
 		389FD6312E26B50700962D46 = {
 			isa = PBXGroup;
 			children = (
+				384A1CF72E3010C800FEB164 /* Localizable.xcstrings */,
 				389FD63C2E26B50700962D46 /* Perminator */,
 				389FD64B2E26B50800962D46 /* PerminatorTests */,
 				389FD6552E26B50800962D46 /* PerminatorUITests */,
@@ -193,6 +199,7 @@
 				en,
 				Base,
 				fr,
+				es,
 			);
 			mainGroup = 389FD6312E26B50700962D46;
 			minimizedProjectReferenceProxies = 1;
@@ -213,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384A1CF82E3010C800FEB164 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +338,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -387,6 +396,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
