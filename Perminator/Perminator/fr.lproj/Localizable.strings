@@ -1,8 +1,23 @@
-/* Help text for setuid bit */
-"help.setuid" = "Exécute le programme avec les privilèges du propriétaire du fichier au lieu de ceux de l’utilisateur.";
+/* Section Headers */
+"section.special" = "Spécial";
+"section.owner" = "Propriétaire";
+"section.group" = "Groupe";
+"section.others" = "Autres";
 
-/* Help text for setgid bit */
-"help.setgid" = "Exécute avec les privilèges du groupe du fichier. Sur un répertoire, les nouveaux fichiers héritent du groupe du répertoire.";
+/* Toggle Labels */
+"toggle.setuid" = "setuid";
+"toggle.setgid" = "setgid";
+"toggle.sticky" = "Sticky";
 
-/* Help text for sticky bit */
-"help.stickybit" = "Lorsqu’il est défini sur un répertoire, seuls le propriétaire du fichier (ou root) peuvent supprimer ou renommer les fichiers, même si d'autres ont un accès en écriture. Ignoré sur les fichiers.";
+/* Permission Labels */
+"permission.read" = "Lecture";
+"permission.write" = "Écriture";
+"permission.execute" = "Exécution";
+
+/* Special Section Help */
+"help.setuid" = "Exécute le programme avec les privilèges du propriétaire du fichier au lieu de ceux de l'utilisateur courant.";
+"help.setgid" = "Exécute avec les privilèges du groupe du fichier. Dans un dossier, les nouveaux fichiers héritent du groupe du dossier.";
+"help.stickybit" = "Lorsqu'il est défini sur un dossier, seul le propriétaire du fichier (ou root) peut supprimer ou renommer des fichiers, même si d'autres ont un accès en écriture. Ignoré sur les fichiers.";
+
+/* Button Copy */
+"button.copy" = "Copier dans le presse-papiers";
