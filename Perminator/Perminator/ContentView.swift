@@ -101,6 +101,9 @@ struct ContentView: View {
             handleFileDrop(providers: providers)
             return true
         }
+        .onAppear {
+            calculate()
+        }
         .onDisappear {
             NSApplication.shared.terminate(nil)
         }
