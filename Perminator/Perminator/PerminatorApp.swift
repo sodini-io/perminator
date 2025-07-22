@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct PerminatorApp: App {
     @Environment(\.openWindow) private var openWindow
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {

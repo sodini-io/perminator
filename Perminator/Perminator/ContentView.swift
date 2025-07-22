@@ -94,6 +94,9 @@ struct ContentView: View {
             handleFileDrop(providers: providers)
             return true
         }
+        .onDisappear {
+            NSApplication.shared.terminate(nil)
+        }
     }
     
     func calculate() -> Void {
