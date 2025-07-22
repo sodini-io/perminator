@@ -11,9 +11,7 @@ struct AboutView: View {
     private var appVersionAndBuild: String {
         let version = Bundle.main
             .infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
-        let build = Bundle.main
-            .infoDictionary?["CFBundleVersion"] as? String ?? "N/A"
-        return "Version \(version) (\(build))"
+        return "Version \(version)"
     }
     
     private var copyright: String {
@@ -27,7 +25,7 @@ struct AboutView: View {
             Image(nsImage: NSApplication.shared.applicationIconImage)
                 .resizable().scaledToFit()
                 .frame(width: 80)
-            Text("Perminator")
+            Text(LocalizedStringKey("Perminator"))
                 .font(.title)
             VStack(spacing: 6) {
                 Text(appVersionAndBuild)

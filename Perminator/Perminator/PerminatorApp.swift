@@ -21,12 +21,12 @@ struct PerminatorApp: App {
                 Button {
                     openWindow(id: "about")
                 } label: {
-                    Text("About Perminator")
+                    Text(LocalizedStringKey("About Perminator"))
                 }
             }
         }
         
-        Window("About Perminator", id: "about") {
+        Window(LocalizedStringKey("About Perminator"), id: "about") {
             AboutView()
                 .containerBackground(.regularMaterial, for: .window)
                 .toolbar(removing: .title)
