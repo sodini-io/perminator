@@ -3,6 +3,12 @@
   "strings" : {
     "0000" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0000"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14,11 +20,23 @@
             "state" : "translated",
             "value" : "0000"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0000"
+          }
         }
       }
     },
     "About Perminator" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Über Perminator"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -36,12 +54,24 @@
             "state" : "translated",
             "value" : "À propos de Perminator"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关于 Perminator"
+          }
         }
       }
     },
     "button.copy" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Zwischenablage kopieren"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -59,12 +89,24 @@
             "state" : "translated",
             "value" : "Lorsqu'il est défini sur un dossier, seul le propriétaire du fichier (ou root) peut supprimer ou renommer des fichiers, même si d'autres ont un accès en écriture. Ignoré sur les fichiers."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "复制到剪贴板"
+          }
         }
       }
     },
     "help.setgid" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Führt das Programm mit den Gruppenrechten aus. Bei einem Verzeichnis erben neue Dateien die Gruppenzugehörigkeit."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -82,12 +124,24 @@
             "state" : "translated",
             "value" : "Exécute avec les privilèges du groupe du fichier. Dans un dossier, les nouveaux fichiers héritent du groupe du dossier."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以文件组的权限运行。在目录上设置后，新文件将继承该目录的用户组。"
+          }
         }
       }
     },
     "help.setuid" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Führt das Programm mit den Rechten des Dateieigentümers statt des aktuellen Benutzers aus."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -105,12 +159,24 @@
             "state" : "translated",
             "value" : "Exécute le programme avec les privilèges du propriétaire du fichier au lieu de ceux de l'utilisateur courant."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以文件所有者的权限运行程序，而不是运行该程序的用户的权限。"
+          }
         }
       }
     },
     "help.stickybit" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn bei einem Verzeichnis gesetzt, können nur der Dateieigentümer (oder root) Dateien löschen oder umbenennen – selbst wenn andere Schreibzugriff haben. Wird bei Dateien ignoriert."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -128,11 +194,23 @@
             "state" : "translated",
             "value" : "Lorsqu'il est défini sur un dossier, seul le propriétaire du fichier (ou root) peut supprimer ou renommer des fichiers, même si d'autres ont un accès en écriture. Ignoré sur les fichiers."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当设置在目录上时，即使其他用户有写权限，也只有文件所有者或 root 能删除或重命名文件。该设置对文件无效。"
+          }
         }
       }
     },
     "https://paginator.sodini.io" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://paginator.sodini.io"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -146,6 +224,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://paginator.sodini.io"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "https://paginator.sodini.io"
@@ -155,6 +239,12 @@
     },
     "james@sodini.io" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "james@sodini.io"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -168,6 +258,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "james@sodini.io"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "james@sodini.io"
@@ -177,6 +273,12 @@
     },
     "Perminator" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perminator"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -190,6 +292,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perminator"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Perminator"
@@ -200,6 +308,12 @@
     "permission.execute" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausführen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -217,12 +331,24 @@
             "state" : "translated",
             "value" : "Exécution"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "执行"
+          }
         }
       }
     },
     "permission.read" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lesen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -240,12 +366,24 @@
             "state" : "translated",
             "value" : "Lecture"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "读取"
+          }
         }
       }
     },
     "permission.write" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schreiben"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -263,12 +401,24 @@
             "state" : "translated",
             "value" : "Écriture"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "写入"
+          }
         }
       }
     },
     "section.group" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruppe"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -286,12 +436,24 @@
             "state" : "translated",
             "value" : "Propriétaire"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用户组"
+          }
         }
       }
     },
     "section.others" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Andere"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -309,12 +471,24 @@
             "state" : "translated",
             "value" : "Autres"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "其他用户"
+          }
         }
       }
     },
     "section.owner" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eigentümer"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -332,12 +506,24 @@
             "state" : "translated",
             "value" : "Propriétaire"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有者"
+          }
         }
       }
     },
     "section.special" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezial"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -355,12 +541,24 @@
             "state" : "translated",
             "value" : "Spécial"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "特殊权限"
+          }
         }
       }
     },
     "toggle.setgid" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "setgid setzen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -377,6 +575,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "setgid"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置 setuid"
           }
         }
       }
@@ -384,6 +588,12 @@
     "toggle.setuid" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "setuid setzen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -400,6 +610,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "setuid"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置 setgid"
           }
         }
       }
@@ -407,6 +623,12 @@
     "toggle.sticky" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticky-Bit"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -423,6 +645,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sticky"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置粘滞位"
           }
         }
       }
