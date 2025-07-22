@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     // Original Chmod Permissions
-    @StateObject var metadata = Metadata(octal: 0)
+    @StateObject var metadata = Metadata(octal: UserDefaults.standard.integer(forKey: "lastChmod"))
     @State private var chmodValue: String = ""
     @State private var symbolicValue: String = ""
+    @State private var isInputValid = true
 
     var body: some View {
         Spacer()
@@ -72,18 +73,24 @@ struct ContentView: View {
             }
             HStack {
                 Spacer()
+                if !isInputValid {
+                    Text(LocalizedStringKey("Invalid chmod value"))
+                        .foregroundColor(.red)
+                        .font(.title3)
+                        .transition(.opacity)
+                }
                 Button(LocalizedStringKey("button.copy")) {
                     NSPasteboard.general.clearContents()
                     NSPasteboard.general.setString(chmodValue, forType: .string)
                 }
-                TextField("0000", text: $chmodValue)
+                TextField(LocalizedStringKey("0000"), text: $chmodValue)
                     .frame(width: 50)
                     .multilineTextAlignment(.trailing)
                     .onSubmit {
-                        if let octalInt = Int(chmodValue) {
+                        isInputValid = Metadata.isValidChmod(chmod: chmodValue)
+                        if let octalInt = Int(chmodValue), isInputValid {
                             metadata.update(octal: octalInt)
-                        } else {
-                            print("Bad chmod value")
+                            statePersist()
                         }
                     }
                     .padding(.trailing)
@@ -126,13 +133,19 @@ struct ContentView: View {
                     chmodValue = String(format: "%04o", perms)
                     if let octalInt = Int(chmodValue) {
                         metadata.update(octal: octalInt)
-                    } else {
-                        print("Bad chmod value")
+                        statePersist()
                     }
             }
         } catch {
             print("Failed to read file attributes: \(error)")
         }
+    }
+    
+    func statePersist() {
+        let value = metadata.octal
+        print("Saving octal to UserDefaults: \(value)")
+        UserDefaults.standard.set(value, forKey: "lastChmod")
+        chmodValue = String(value)
     }
     
 }

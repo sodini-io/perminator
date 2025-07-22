@@ -60,7 +60,12 @@ class Metadata: OctalRepresentable, ObservableObject {
     @Published var owner: Permission
     @Published var group: Permission
     @Published var others: Permission
-    
+
+    static func isValidChmod(chmod: String) -> Bool {
+        let pattern = #"^[0-7]{3,4}$"#
+        return chmod.range(of: pattern, options: .regularExpression) != nil
+    }
+
     init(octal: Int) {
         (special, owner, group, others) = Metadata.parse(octal)
     }

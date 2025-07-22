@@ -257,3 +257,40 @@ struct MetadataTests {
         #expect(metadata.octal == 4321)
     }
 }
+
+struct MetadataIsValidChmodTests {
+ 
+    @Test func validThreeCharacters() throws {
+        #expect(Metadata.isValidChmod(chmod: "754") == true)
+        #expect(Metadata.isValidChmod(chmod: "777") == true)
+        #expect(Metadata.isValidChmod(chmod: "000") == true)
+    }
+
+    @Test func validFourCharacters() throws {
+        #expect(Metadata.isValidChmod(chmod: "1754") == true)
+        #expect(Metadata.isValidChmod(chmod: "0754") == true)
+        #expect(Metadata.isValidChmod(chmod: "7777") == true)
+        #expect(Metadata.isValidChmod(chmod: "0000") == true)
+    }
+    
+    @Test func invalidThreeCharacters() throws {
+        #expect(Metadata.isValidChmod(chmod: "832") == false)
+        #expect(Metadata.isValidChmod(chmod: "489") == false)
+        #expect(Metadata.isValidChmod(chmod: "OO7") == false)
+        #expect(Metadata.isValidChmod(chmod: "👉😀👈") == false)
+    }
+    
+    @Test func invalidFourCharacters() throws {
+        #expect(Metadata.isValidChmod(chmod: "8432") == false)
+        #expect(Metadata.isValidChmod(chmod: "0489") == false)
+        #expect(Metadata.isValidChmod(chmod: "aOO7") == false)
+        #expect(Metadata.isValidChmod(chmod: "👉😀🙃👈") == false)
+    }
+    
+    @Test func invalidExtraCharacters() throws {
+        #expect(Metadata.isValidChmod(chmod: "00000") == false)
+        #expect(Metadata.isValidChmod(chmod: "10755") == false)
+        #expect(Metadata.isValidChmod(chmod: "asdfaOO7") == false)
+        #expect(Metadata.isValidChmod(chmod: "👉😀👾🙃👈") == false)
+    }
+}
