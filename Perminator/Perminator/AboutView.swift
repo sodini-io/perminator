@@ -22,10 +22,6 @@ struct AboutView: View {
         return "© \(year) Sodini Systems LLC"
     }
 
-    private var developerWebsite: URL {
-        URL(string: "https://sodini.io/")!
-    }
-
     var body: some View {
         VStack(spacing: 14) {
             Image(nsImage: NSApplication.shared.applicationIconImage)
@@ -38,10 +34,16 @@ struct AboutView: View {
                 Text(copyright)
             }
             .font(.callout)
-            Link(
-                "Developer Website",
-                destination: developerWebsite
-            )
+            VStack{
+                Link(
+                    "https://paginator.sodini.io",
+                    destination: URL(string: "https://paginator.sodini.io/")!
+                )
+                Link(
+                    "james@sodini.io",
+                    destination: URL(string: "mailto:james@sodini.io")!)
+            }
+
         }
         .padding()
         .frame(minWidth: 400, minHeight: 260)
